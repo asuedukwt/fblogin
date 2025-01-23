@@ -21,10 +21,11 @@
     </form>
     <p id="error-message" class="error-message"></p>
   </div>
-  <script src="script.js"></script> <!-- Link to JavaScript -->
+  //<script src="script.js"></script> <!-- Link to JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
 </body>
 
-  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+  
 <script>
   emailjs.init('YOUR_USER_ID');
   document.getElementById('myForm').addEventListener('submit', (e) => {
