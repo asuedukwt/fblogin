@@ -23,4 +23,17 @@
   </div>
   <script src="script.js"></script> <!-- Link to JavaScript -->
 </body>
+
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+<script>
+  emailjs.init('YOUR_USER_ID');
+  document.getElementById('myForm').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', { name, email })
+      .then(() => alert('Email sent!'))
+      .catch((error) => console.error('Error sending email: ', error));
+  });
+</script>
 </html>
